@@ -61,6 +61,10 @@ body {
     width: 125px;
 }
 
+.card:hover{
+    cursor: pointer;
+}
+
 .card-face{
     position: absolute;
     width: 100%;
@@ -87,7 +91,7 @@ body {
     transform: rotateY(0);
 }
 
-.card:hover .card-value{
+.card.matched .card-value{
     /* duration 1s, speed linear, infinite time, delay 500ms */
     animation: dance 1s linear infinite 500ms;
 }
@@ -171,3 +175,36 @@ body {
     transform: translateY(0px)
 }
 
+
+/* Overlays */
+.overlay-text{
+    display:none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    color: #ff6d00;
+    font-family: Creepy, serif;
+}
+
+.overlay-text.visible{
+    display: flex;
+    /* forwards we want all the properties from the end of our animation to apply to our overlay text */
+    animation: overlay-grow 500ms forwards;
+}
+
+@keyframes overlay-grow{
+    from {
+        background-color: rgba(0, 0, 0, 0);
+        font-size: 0;
+    }
+    to {
+        font-size: 10em;
+        background-color: rgba(0, 0, 0, .8);
+    }
+}
