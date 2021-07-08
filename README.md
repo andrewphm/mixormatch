@@ -30,6 +30,6 @@ A spooky card matching game. Use your memory and skills to match pairs of cards.
     </ul>
 </details>		
 
-Click [here](http://andrewpham.ca/mixormatch/) to view.
+Click [here](http://andrewpham.ca/mixormatch/) to play.
 
 <img src="./preview.png">
