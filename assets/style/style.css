@@ -1,18 +1,11 @@
-@font-face {
-    font-family: "Creepy";
-    src: url(/assets/Fonts/Creepy.woff) format("woff"),
-    url(/assets/Fonts/Creepy.woff2) format("woff2")
-}
-
-@font-face {
-    font-family: "Lunacy";
-    src: url(/assets/Fonts/Lunacy.woff) format("woff"),
-    url(/assets/Fonts/Lunacy.woff2) format("woff2")
-}
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
+
 
 html {
     min-height: 100vh;
@@ -26,34 +19,37 @@ body {
 
 .page-title{
     color: #ff6d00;
-    font-family: Creepy, serif;
+    font-family: 'Creepster', cursive;
     font-weight: normal;
     text-align: center;
-    font-size: 6em;
+    font-size: 5rem;
+    margin-bottom: 2rem;
 }
 
 .game-info-container {
     grid-column: 1 / span 4;
-    display: flex; 
-    justify-content: space-between;
-
+    text-align: center;
     /* Perspective added for 3D animation */
     perspective: 500px;
+    display: flex;
+    justify-content: center;
+    column-gap: 8rem;
+    align-items: flex-end;
 }
 
 .game-info {
-    font-family: Lunacy, serif;
+    font-family: 'Creepster', cursive;
     color: #ffbb89;
-    font-size: 4rem;
+    font-size: 3rem;
 }
 
 .game-container{
     display: grid;
     grid-template-columns: repeat(4, auto);
     grid-gap: 10px;
-    margin: 50px;
     justify-content: center;
-    margin-bottom: 10rem;
+    margin-bottom: 5rem;
+    transform: scale(.95);
 }
 
 .card {
@@ -195,7 +191,7 @@ body {
     align-items: center;
     z-index: 100;
     color: #ff6d00;
-    font-family: Creepy, serif;
+    font-family: Creepy, Creepster, serif;
     cursor: pointer;
 }
 
