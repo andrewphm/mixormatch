@@ -1,41 +1,33 @@
 # Card Matching Game
 A spooky card matching game. Use your memory and skills to match pairs of cards. Match all cards before 100 seconds to win. 
 
+## Built With
+- CSS3
+- HTML5
+- JavaScript(ES6)
 
 ## Features 
 - OOJS - use of classes and object instances 
-- Animations(3D animations/perspective/keyframes)
+- CSS Animations(3D animations/perspective/keyframes)
 - Audio sounds triggered on events
 - [Fisher-Yates shuffling algorithm](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle)
+
 <details>
-	<summary>Logic to building the game</summary>
-	HTML
-    <ul>
-        <li>Create the title header.</li>
-        <li>Create a game container.</li>
-        <li>Create the time and flip counter. Give IDs to allow JS to make them dynamic.</li>
-        <li>Create 16 cards.</li>
-        <li>Inside each card element, make front and back children.</li>
-    </ul>
-    CSS
-    <ul>
-        <li>Apply radial-gradient to the background.</li>
-        <li>Apply styling to the title and counters.</li>
-        <li>Use grid layout to create a 4 column grid.</li>
-        <li>Style the front and back of the cards.</li>
-        <li>Create CSS animations for cards</li>
-        <li>Initial state of front card is rotatedX 180 to make it backfacing</li>
-        <li>Initial state of back card is in view.</li>
-        <li>Create special classes to be injected by javascript to flip the cards.</li>
-        <li>Create gamestart, gameover, victory overlays for the lifecycle of the game.</li>
-    </ul>
+	<summary>Game logic</summary>
     JavaScript
     <ul>
-        <li>Create Audio Controller class with methods to start and stop sounds</li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>Create Audio Controller Class to handle sounds</li>
+        <li>Create Game Class to handle all game logic</li>
+        <li>Game should begin anytime overlay is clicked</li>
+        <li>Game will shuffle cards</li>
+        <li>Allow user to click on two cards and compare</li>
+        <li>If mismatched, then reset cards</li>
+        <li>If matched, push cards into a matched array and keep visible</li>
+        <li>If matched arrays is same length as cards array then display victory overlay</li>
+        <li>If time runs out, display gameover overlay</li>
     </ul>
-</details>		    
+</details>		
+
+Click [here](http://andrewpham.ca/mixormatch/) to view.
+
+<img src="./preview">

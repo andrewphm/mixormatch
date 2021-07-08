@@ -1,3 +1,4 @@
+// Audio class to handle all sounds. Utilize JS Audio() class
 
 class AudioController {
     constructor() {
@@ -32,6 +33,7 @@ class AudioController {
     }
 }
 
+// Game class to handle all game logic. 
 class MixOrMatch {
     constructor(totalTime, cards) {
         this.cardArray = cards;
@@ -41,6 +43,7 @@ class MixOrMatch {
         this.ticker = document.getElementById('flips');
         this.audioController = new AudioController();
     }
+    // Reset timer/flips and hide all cards. 
     startGame() {
         this.cardToCheck = null;
         this.totalClicks = 0;
@@ -58,12 +61,17 @@ class MixOrMatch {
         this.timer.innerText = this.timeRemaining;
         this.ticker.innerText = this.totalClicks;
     }
+
+    // Reset cards to backfacing. 
     hideCards(){
         this.cardArray.forEach(card => {
             card.classList.remove('visible');
             card.classList.remove('matched');
         })
     }
+
+    // event handler function for when a card is clicked
+    // Make card visible and assign it as the card to check
     flipCard(card) {
         if(this.canFlipCard(card)){
             this.audioController.flip();
@@ -72,12 +80,15 @@ class MixOrMatch {
             card.classList.add('visible')
 
             if(this.cardToCheck){
+                // If there is already a card to check, see if new card matches
                 this.checkForCardMatch(card)
             } else {
                 this.cardToCheck = card;
             }
         }
     }
+
+    // Check if src attribute of the cards match by calling getCardType
     checkForCardMatch(card) {
         if(this.getCardType(card) === this.getCardType(this.cardToCheck)){
             this.cardMatch(card, this.cardToCheck);
@@ -86,6 +97,9 @@ class MixOrMatch {
         }
         this.cardToCheck = null;
     }
+
+    // Takes the two matched cards and pushes them into a matched cards array
+    // Checks win condition
     cardMatch(card1, card2){
         this.matchedCards.push(card1);
         this.matchedCards.push(card2);
@@ -96,6 +110,8 @@ class MixOrMatch {
             this.victory()
         }
     }
+
+    // Takes the mismatched cards and resets them to backfacing
     cardMisMatch(card1, card2){
         this.busy = true;
         setTimeout(() => {
@@ -104,9 +120,13 @@ class MixOrMatch {
             this.busy = false;
         }, 1000)
     }
+
+    // return the value of the src attribute
     getCardType(card){
         return card.getElementsByClassName('card-value')[0].src;
     }
+
+    // Creates an interval that runs every second and updates this.timer
     startCountDown() {
         return setInterval(() => {
             this.timeRemaining--;
@@ -116,17 +136,22 @@ class MixOrMatch {
             }
         }, 1000)
     }
+
+    // Makes game over overlay visible
     gameOver() {
         clearInterval(this.countDown);
         this.audioController.gameOver();
         document.getElementById('game-over-text').classList.add('visible')
     }
+
+    // Makes victory overlay visible
     victory() {
         clearInterval(this.countDown);
         this.audioController.victory();
         document.getElementById('victory-text').classList.add('visible')
     }
 
+    // Shuffle the deck of cards by using the order property in CSS
     shuffleCards() {
         for(let i = this.cardArray.length - 1; i >= 0; i--){
             let randIndex = Math.floor(Math.random() * (i+1))
@@ -134,24 +159,27 @@ class MixOrMatch {
             this.cardArray[i].style.order = randIndex;
         }
     }
+
+    // validates that the user can flip a card
     canFlipCard(card) {
         return !this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck
     }
 }
 
-// Validate the document has loaded, if not add an event listener to the document checking if it's loaded with a callback ready() function. 
+// Validating document has loaded and calling ready() function
 if(document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', ready());
 } else {
     ready();
 }
 
+// Create a new MixOrMatch instance, and startGame on overlay click
 function ready() {
     // Grab all overlays
     let overlays = document.querySelectorAll('.overlay-text');
-    console.log(overlays)
     let cards = document.querySelectorAll('.card')
-    let game = new MixOrMatch(100, cards)
+    let game = new MixOrMatch(80, cards)
+    console.log(game);
 
     //Adding event listeners to each overlay so on click they are removed.
     overlays.forEach(overlay => {
@@ -167,4 +195,6 @@ function ready() {
         })
     })
 }
+
+
 
