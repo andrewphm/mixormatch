@@ -196,6 +196,7 @@ body {
     z-index: 100;
     color: #ff6d00;
     font-family: Creepy, serif;
+    cursor: pointer;
 }
 
 .overlay-text.visible{

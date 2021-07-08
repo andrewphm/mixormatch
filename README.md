@@ -1,8 +1,10 @@
 # Card Matching Game
+A spooky card matching game. Use your memory and skills to match pairs of cards. Match all cards before 100 seconds to win. 
+
 
 ## Features 
 - Animations(3D animations/perspective/keyframes)
-
+- Audio sounds triggered on events
 
 <details>
 	<summary>Logic to building the game</summary>
@@ -28,7 +30,7 @@
     </ul>
     JavaScript
     <ul>
-        <li></li>
+        <li>Create Audio Controller class with methods to start and stop sounds</li>
         <li></li>
         <li></li>
         <li></li>
