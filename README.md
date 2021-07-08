@@ -12,13 +12,15 @@ A spooky card matching game. Use your memory and skills to match pairs of cards.
 - Audio sounds triggered on events
 - [Fisher-Yates shuffling algorithm](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle)
 
+
+
 <details>
 	<summary>Game logic</summary>
     JavaScript
     <ul>
         <li>Create Audio Controller Class to handle sounds</li>
         <li>Create Game Class to handle all game logic</li>
-        <li>Game should begin anytime overlay is clicked</li>
+        <li>When overlay is clicked, create a Game class instance and start game</li>
         <li>Game will shuffle cards</li>
         <li>Allow user to click on two cards and compare</li>
         <li>If mismatched, then reset cards</li>
@@ -30,4 +32,4 @@ A spooky card matching game. Use your memory and skills to match pairs of cards.
 
 Click [here](http://andrewpham.ca/mixormatch/) to view.
 
-<img src="./preview">
+<img src="./preview.png">
