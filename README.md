@@ -6,7 +6,7 @@ A spooky card matching game. Use your memory and skills to match pairs of cards.
 - OOJS - use of classes and object instances 
 - Animations(3D animations/perspective/keyframes)
 - Audio sounds triggered on events
-- ![Fisher-Yates shuffling algorithm](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle)
+- [Fisher-Yates shuffling algorithm](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle)
 <details>
 	<summary>Logic to building the game</summary>
 	HTML
