@@ -43,6 +43,10 @@ body {
     font-size: 3rem;
 }
 
+#flips, #time-remaining{
+    color: #ff6d00;
+}
+
 .game-container{
     display: grid;
     grid-template-columns: repeat(4, auto);
