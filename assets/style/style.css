@@ -16,7 +16,7 @@
 
 html {
     min-height: 100vh;
-    max-height: 100vh;
+    
 }
 
 body {
@@ -53,6 +53,7 @@ body {
     grid-gap: 10px;
     margin: 50px;
     justify-content: center;
+    margin-bottom: 10rem;
 }
 
 .card {
@@ -116,7 +117,7 @@ body {
 .card-front{
     background-color: #ffbb89;
     border-color: #333;
-    /* Flipping the card 180deg to its back(initial state) */
+    /* Flipping the card 180deg so its backfacing(initial state) */
     transform: rotateY(180deg);
 }
 
@@ -177,6 +178,12 @@ body {
 
 
 /* Overlays */
+
+.overlay-text-small {
+    font-size: .3em;
+    cursor: pointer;
+}
+
 .overlay-text{
     display:none;
     position: fixed;
@@ -184,7 +191,6 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    display:flex;
     justify-content: center;
     align-items: center;
     z-index: 100;
@@ -194,8 +200,10 @@ body {
 
 .overlay-text.visible{
     display: flex;
+    flex-direction: column;
     /* forwards we want all the properties from the end of our animation to apply to our overlay text */
     animation: overlay-grow 500ms forwards;
+    
 }
 
 @keyframes overlay-grow{
@@ -206,5 +214,16 @@ body {
     to {
         font-size: 10em;
         background-color: rgba(0, 0, 0, .8);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .game-container{
+        grid-template-columns: repeat(2, auto);
+    }
+
+    .game-info-container {
+        flex-direction: column;
+        align-items: center;
     }
 }
