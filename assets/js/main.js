@@ -58,6 +58,9 @@ class MixOrMatch {
             //if statement
         }
     }
+    shuffleCards()
+
+
     canFlipCard(card) {
         return true;
         // return !this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck
