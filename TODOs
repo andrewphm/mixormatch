@@ -8,7 +8,16 @@
         - [x] div container with number of flips
     - [x] div container with game content
         - [x] div card container
-            - [x] div with back of card images
-            - [x] div with front of card images
+            - [x] div for card front
+                - [x] add all image elements 
+            - [x] div for card back
+                - [x] add all image elements
         - [x] Repeat 16 times with all the appropriate images
-        
+
+- [x] Create stylesheet
+    - [x] import creepster font from google fonts
+    - [x] reset all elements to border-box
+    - [x] set min-height to 100vh 
+    - [x] style body background
+    - [x] style page title
+
