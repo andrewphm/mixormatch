@@ -15,9 +15,13 @@
         - [x] Repeat 16 times with all the appropriate images
 
 - [x] Create stylesheet
-    - [x] import creepster font from google fonts
-    - [x] reset all elements to border-box
-    - [x] set min-height to 100vh 
-    - [x] style body background
-    - [x] style page title
+    - [x] Import creepster font from google fonts
+    - [x] Reset all elements to border-box
+    - [x] Set min-height to 100vh 
+    - [x] Style body background
+    - [x] Style page title
+    - [x] Style game info container
+        - [x] Use the perspective property to better view the 3D transform
+    - [x] Style game container 
+        - [x] Utilize grid layout with columns of 4
 
