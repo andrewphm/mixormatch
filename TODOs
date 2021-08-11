@@ -1,0 +1,14 @@
+- [x] Create index html
+    - [x] Create a div overlay to start the game
+    - [x] Create a div overlay for game over
+    - [x] Create a div overlay for victory
+    - [x] Create page title with name of game
+    - [x] Create a div container with game info
+        - [x] div container with time remaining
+        - [x] div container with number of flips
+    - [x] div container with game content
+        - [x] div card container
+            - [x] div with back of card images
+            - [x] div with front of card images
+        - [x] Repeat 16 times with all the appropriate images
+        
